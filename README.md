@@ -5,5 +5,9 @@ This repository is for the starter shields used in the ENAE100 Freshman Workshop
 ## /Board
 Gerbers and board files
 
-## /Code
+## /Code/StarterShield
 Working sample code for the board
+
+# Notes/FAQ
+1. SD Chip Select is Pin 10
+2. LED is on pin 9
