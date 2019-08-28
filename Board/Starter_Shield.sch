@@ -17401,10 +17401,10 @@ Source: http://www.murata.com .. GRM43DR72E224KW01.pdf</description>
 <pinref part="GND2" gate="1" pin="GND"/>
 </segment>
 <segment>
-<pinref part="DATA" gate="A" pin="7"/>
-<wire x1="170.18" y1="93.98" x2="157.48" y2="93.98" width="0.1524" layer="91"/>
-<wire x1="157.48" y1="93.98" x2="157.48" y2="71.12" width="0.1524" layer="91"/>
+<wire x1="157.48" y1="96.52" x2="157.48" y2="71.12" width="0.1524" layer="91"/>
 <pinref part="GND3" gate="1" pin="GND"/>
+<pinref part="DATA" gate="A" pin="6"/>
+<wire x1="170.18" y1="96.52" x2="157.48" y2="96.52" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="SDA" class="0">

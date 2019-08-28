@@ -88,7 +88,10 @@ void loop() {
 
 	// If the file isn't open, pop up an error:
 	else {
+    for(int i = 0; i < 6; i++) 
+    Serial.println(time[i]);
 		Serial.println("error opening datalog.txt");
+    Serial.println(temperature);
 	}
 
 	// print to your computer too
