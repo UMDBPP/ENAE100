@@ -1,6 +1,11 @@
 # ENAE100
 This repository is for the starter shields used in the ENAE100 Freshman Workshops during the fall semester
 
+# Dependencies
+* [OneWire](https://github.com/PaulStoffregen/OneWire) by Paul Stoffregen
+* [DallasTemperature](https://github.com/milesburton/Arduino-Temperature-Control-Library) by Miles Burton
+* [RTClib](https://github.com/adafruit/RTClib) by Adafruit
+
 # Contents
 ## /Board
 Gerbers and board files
