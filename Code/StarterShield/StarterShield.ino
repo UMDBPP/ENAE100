@@ -64,6 +64,8 @@ void loop() {
 
   // If the file is available (meaning that it could open the file from the SD card), write to it:
   if (dataFile) {
+    // This is a lot of repetetive code just to print the time...
+    // We could certainly turn it into a function if we're feeling ambitious! See: https://www.arduino.cc/en/Reference/FunctionDeclaration
     if(month < 10)
       dataFile.print("0");
     dataFile.print(month);
