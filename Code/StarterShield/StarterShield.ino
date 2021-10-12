@@ -32,10 +32,10 @@ void setup() {
   Serial.print("Initializing SD card...");
 
   if (!SD.begin(CS)) {
-    Serial.println("Card failed, or not present");
+    Serial.println(F("Card failed, or not present"));
   }
   else {
-    Serial.println("card initialized.");
+    Serial.println(F("card initialized."));
   }
 
   // Initialize the sensors and get them to begin
@@ -64,36 +64,34 @@ void loop() {
 
   // If the file is available (meaning that it could open the file from the SD card), write to it:
   if (dataFile) {
-    // This is a lot of repetetive code just to print the time...
-    // We could certainly turn it into a function if we're feeling ambitious! See: https://www.arduino.cc/en/Reference/FunctionDeclaration
     if(month < 10)
-      dataFile.print("0");
+      dataFile.print(F("0"));
     dataFile.print(month);
-    dataFile.print("/"); // Since we are printing single characters (data type of char) we could use '' instead of "", but for simplicity we will stick with double quotes
+    dataFile.print(F("/")); // Since we are printing single characters (data type of char) we could use '' instead of "", but for simplicity we will stick with double quotes
     if(day < 10) // Our RTC returns the time as an int, which means it wont have leading zeros when we print it, we add them in so our formatting stays consistant
-      dataFile.print("0");
+      dataFile.print(F("0"));
     dataFile.print(day);
-    dataFile.print("/");
+    dataFile.print(F("/"));
     dataFile.print(year);
-    dataFile.print(" ");
+    dataFile.print(F(" "));
     if(hour < 10)
-      dataFile.print("0");
+      dataFile.print(F("0"));
     dataFile.print(hour);
-    dataFile.print(":");
+    dataFile.print(F(":"));
     if(minute < 10)
-      dataFile.print("0");
+      dataFile.print(F("0"));
     dataFile.print(minute);
-    dataFile.print(":");
+    dataFile.print(F(":"));
     if(second < 10)
-      dataFile.print("0");
+      dataFile.print(F("0"));
     dataFile.print(second);
-    dataFile.print(", "); // End each section of data with a comma, so our output is in the comma-separated-value (.csv) format
+    dataFile.print(F(", ")); // End each section of data with a comma, so our output is in the comma-separated-value (.csv) format
     
     dataFile.print(temperature); 
     // Each line in our datafile now has two entries, the first entry represents the time and the second entry represents the temperature at that time
     // When we attach more sensors to our Arduino, we can uncomment the line below to add another comma, and then print the data from the sensor
     // For each new piece of data you want to print, simply add a comma at the end of the previous data entry
-    // dataFile.print(', ');
+    // dataFile.print(F(', '));
     
     dataFile.println(); // End each data take (row of data) with a new line
     
@@ -102,37 +100,37 @@ void loop() {
   
   // If the file isn't open, pop up an error:
   else {
-    Serial.println("error opening datalog.txt");
+    Serial.println(F("error opening datalog.txt"));
   }
 
   // Print to your computer too, if its connected
   //The code below is the same code as above, except we are using Serial.print() to print to our computer instead of dataFile.print() which prints to the datafile
   if(Serial) {
     if(month < 10)
-      Serial.print("0");
+      Serial.print(F("0"));
     Serial.print(month);
-    Serial.print("/");
+    Serial.print(F("/"));
     if(day < 10)
-      Serial.print("0");
+      Serial.print(F("0"));
     Serial.print(day);
-    Serial.print("/");
+    Serial.print(F("/"));
     Serial.print(year);
-    Serial.print(" ");
+    Serial.print(F(" "));
     if(hour < 10)
-      Serial.print("0");
+      Serial.print(F("0"));
     Serial.print(hour);
-    Serial.print(":");
+    Serial.print(F(":"));
     if(minute < 10)
-      Serial.print("0");
+      Serial.print(F("0"));
     Serial.print(minute);
-    Serial.print(":");
+    Serial.print(F(":"));
     if(second < 10)
-      Serial.print("0");
+      Serial.print(F("0"));
     Serial.print(second);
-    Serial.print(", "); 
+    Serial.print(F(", ")); 
 
     Serial.print(temperature); 
-    //Serial.print(', ');
+    //Serial.print(F(', '));
 
     Serial.println();
   }
