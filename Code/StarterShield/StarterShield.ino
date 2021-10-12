@@ -91,7 +91,7 @@ void loop() {
     // Each line in our datafile now has two entries, the first entry represents the time and the second entry represents the temperature at that time
     // When we attach more sensors to our Arduino, we can uncomment the line below to add another comma, and then print the data from the sensor
     // For each new piece of data you want to print, simply add a comma at the end of the previous data entry
-    // dataFile.print(F(', '));
+    // dataFile.print(F(", "));
     
     dataFile.println(); // End each data take (row of data) with a new line
     
@@ -130,7 +130,7 @@ void loop() {
     Serial.print(F(", ")); 
 
     Serial.print(temperature); 
-    //Serial.print(F(', '));
+    //Serial.print(F(", "));
 
     Serial.println();
   }
