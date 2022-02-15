@@ -41,7 +41,8 @@ void setup() {
   // Initialize the sensors and get them to begin
   temp.begin();
   rtc.begin();
-
+  
+  //Comment out any RTC adjust lines and upload your code again after you set the RTC for the first time! Otherwise your RTC will reset every time it is powered on!
   rtc.adjust(DateTime(F(__DATE__), F(__TIME__))); // Automatically set the real-time clock, when to resetting the time of your RTC make sure to remove its battery
   // rtc.adjust(DateTime(2014, 1, 21, 3, 0, 0)); // Manually set the real-time clock
 
